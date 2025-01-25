@@ -13,33 +13,33 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Estoque</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Compras</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Vendas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/estoque}">Estoque</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/compras}">Compras</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/vendas}">Vendas</a></li>
         </ul>
     </nav>
 
     <div class="container col-sm-4 text-center mt-3">
         <h3>Cadastrar Bicicleta</h3>
-        <form>
+        <form th:action="@{/cadastrarBici}" method="POST" th:object="${bicicleta}">
             <div class="input-group m-2">
                 <span class="input-group-text">Marca</span>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" th:field="${bicicleta.marca}" required>
             </div>
 
             <div class="input-group m-2">
                 <span class="input-group-text">Modelo</span>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" th:field="${bicicleta.modelo}" required>
             </div>
             <div class="input-group m-2">
                 <span class="input-group-text">Preço Custo R$</span>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" th:field="${bicicleta.precoCusto}" min="0">
             </div>
 
             <div class="input-group m-2">
                 <span class="input-group-text">Preço Venda R$</span>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" th:field="${bicicleta.precoVenda}" min="0">
             </div>
             <button type="submit" class="btn btn-primary">ENVIAR</button>
         </form>
@@ -57,6 +57,16 @@
                     <th>Saldo</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr th:each="bicicleta : ${bicicletas}">
+                    <td th:text="${bicicleta.id}">ID</td>
+                    <td th:text="${bicicleta.modelo}">ID</td>
+                    <td th:text="${bicicleta.marca}">ID</td>
+                    <td th:text="${bicicleta.precoCusto}">ID</td>
+                    <td th:text="${bicicleta.precoVenda}">ID</td>
+                    <td th:text="${bicicleta.saldo}">ID</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>

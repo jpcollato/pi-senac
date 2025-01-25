@@ -2,11 +2,12 @@ package com.jpcycles.senacpi.model;
 
 
 public class Bicicleta {
+    private Integer id;
     private String modelo;
     private String marca;
-    private double precoCusto;
-    private double precoVenda;
-    private double saldo;
+    private Double precoCusto;
+    private Double precoVenda;
+    private Double saldo;
 
     public Bicicleta() {
     }
@@ -35,28 +36,36 @@ public class Bicicleta {
         this.marca = marca;
     }
 
-    public double getPrecoCusto() {
+    public Double getPrecoCusto() {
         return precoCusto;
     }
 
-    public void setPrecoCusto(double precoCusto) {
+    public void setPrecoCusto(Double precoCusto) {
         this.precoCusto = precoCusto;
     }
 
-    public double getPrecoVenda() {
+    public Double getPrecoVenda() {
         return precoVenda;
     }
 
-    public void setPrecoVenda(double precoVenda) {
+    public void setPrecoVenda(Double precoVenda) {
         this.precoVenda = precoVenda;
     }
 
-    public double getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
+    public void setSaldo(Double saldo) {
         this.saldo = saldo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
     
     

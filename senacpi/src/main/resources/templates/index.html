@@ -13,10 +13,10 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Estoque</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Compras</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Vendas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/estoque}">Estoque</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/compras}">Compras</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/vendas}">Vendas</a></li>
         </ul>
     </nav>
 
@@ -34,9 +34,9 @@
 
 
     <div id="buttons" class="d-grid gap-3">
-        <a href="#" class="btn btn-primary btn-block">CADASTRAR BICICLETA</a>
-        <a href="#" class="btn btn-primary btn-block">VENDER BICICLETA</a>
-        <a href="#" class="btn btn-primary btn-block">COMPRAR BICICLETA</a>
+        <a th:href="@{/estoque}" class="btn btn-primary btn-block">CADASTRAR BICICLETA</a>
+        <a th:href="@{/vendas}" class="btn btn-primary btn-block">VENDER BICICLETA</a>
+        <a th:href="@{/compras}" class="btn btn-primary btn-block">COMPRAR BICICLETA</a>
     </div>
 
 </body>

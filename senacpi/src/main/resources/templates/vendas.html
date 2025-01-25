@@ -11,30 +11,30 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Estoque</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Compras</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Vendas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/estoque}">Estoque</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/compras}">Compras</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/vendas}">Vendas</a></li>
         </ul>
     </nav>
 
     <div class="container col-sm-4 text-center mt-3">
         <h3>Cadastrar Venda de Bicicleta</h3>
         <h6>Diminui o saldo do estoque!</h5>
-        <form action="" method="post">
+        <form th:action="@{/venderBici}" th:object="${bicicleta}" method="post">
             <div class="input-group m-2">
                 <span class="input-group-text">ID</span>
-                <input type="number" class="form-control" required>
+                <input type="number" class="form-control" th:field="${bicicleta.id}" required>
             </div>
 
             <div class="input-group m-2">
                 <span class="input-group-text">Preço Venda R$</span>
-                <input type="number" class="form-control" required>
+                <input type="number" class="form-control" th:field="${bicicleta.precoVenda}" required>
             </div>
 
             <div class="input-group m-2">
                 <span class="input-group-text">Quantidade</span>
-                <input type="number" class="form-control" required>
+                <input type="number" class="form-control" th:field="${bicicleta.saldo}" required min="0">
             </div>
             <button type="submit" class="btn btn-primary">VENDER</button>
         </form>
