@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="homeStyle.css">
+
+    <title>JPCYCLES</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Estoque</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Compras</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Vendas</a></li>
+        </ul>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-4 border p-5 m-5">
+            <h1>JPCYCLES</h2>
+                <h4>- Organize e controle seu estoque da sua oficina através de movimentações de compras e vendas.</h4>
+                <h4>- Cadastre bicicletas referenciando marcas e modelos.</h4>
+                <h4>- Indique o tamanho da bicicleta para facilitar suas vendas.</h4>
+        </div>
+        <div class="col-sm-4 p-5 my-5">
+            <img th:src="@{images/logo.png}" class="rounded img-fluid" alt="Logo">
+        </div>
+    </div>
+
+
+    <div id="buttons" class="d-grid gap-3">
+        <a href="#" class="btn btn-primary btn-block">CADASTRAR BICICLETA</a>
+        <a href="#" class="btn btn-primary btn-block">VENDER BICICLETA</a>
+        <a href="#" class="btn btn-primary btn-block">COMPRAR BICICLETA</a>
+    </div>
+
+</body>
+
+</html>
