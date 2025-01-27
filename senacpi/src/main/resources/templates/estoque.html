@@ -33,13 +33,13 @@
                 <input type="text" class="form-control" th:field="${bicicleta.modelo}" required>
             </div>
             <div class="input-group m-2">
-                <span class="input-group-text">Preço Custo R$</span>
-                <input type="number" class="form-control" th:field="${bicicleta.precoCusto}" min="0">
+                <span class="input-group-text">Ano</span>
+                <input type="number" class="form-control" th:field="${bicicleta.ano}" min="0">
             </div>
 
             <div class="input-group m-2">
-                <span class="input-group-text">Preço Venda R$</span>
-                <input type="number" class="form-control" th:field="${bicicleta.precoVenda}" min="0">
+                <span class="input-group-text">Tamanho</span>
+                <input type="text" class="form-control" th:field="${bicicleta.tamanho}" maxlength="1" placeholder="P, M, G">
             </div>
             <button type="submit" class="btn btn-primary">ENVIAR</button>
         </form>
@@ -52,6 +52,8 @@
                     <th>ID</th>
                     <th>Modelo</th>
                     <th>Marca</th>
+                    <th>Ano</th>
+                    <th>Tamanho</th>
                     <th>Preço Custo(R$)</th>
                     <th>Preço Venda(R$)</th>
                     <th>Saldo</th>
@@ -60,11 +62,13 @@
             <tbody>
                 <tr th:each="bicicleta : ${bicicletas}">
                     <td th:text="${bicicleta.id}">ID</td>
-                    <td th:text="${bicicleta.modelo}">ID</td>
-                    <td th:text="${bicicleta.marca}">ID</td>
-                    <td th:text="${bicicleta.precoCusto}">ID</td>
-                    <td th:text="${bicicleta.precoVenda}">ID</td>
-                    <td th:text="${bicicleta.saldo}">ID</td>
+                    <td th:text="${bicicleta.modelo}">MODELO</td>
+                    <td th:text="${bicicleta.marca}">MARCA</td>
+                    <td th:text="${bicicleta.ano}">ANO</td>
+                    <td th:text="${bicicleta.tamanho}">TAMANHO</td>
+                    <td th:text="${bicicleta.precoCusto}">PREÇOCUSTO</td>
+                    <td th:text="${bicicleta.precoVenda}">PREÇOVENDA</td>
+                    <td th:text="${bicicleta.saldo}">SALDO</td>
                 </tr>
             </tbody>
         </table>
